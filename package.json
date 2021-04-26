@@ -16,6 +16,10 @@
     "spin",
     "loading"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Haoxuan8/react-spin.git"
+  },
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.13.16",

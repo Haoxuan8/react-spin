@@ -1,8 +1,6 @@
 node_modules
-dist
 .DS_Store
 .idea/
 .vscode/
 lib/
 examples/index.js
-README.md
