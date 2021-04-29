@@ -38,4 +38,5 @@ render(
 | tip             | String            | undefined   | The text below indicator           |
 | mainColor       | String            | `#409eff`   | The color of default indicator     |
 | fontColor       | String            | `#409eff`   | The color of tip                   |
-| size            | number            | 42          | the size(`px`) of default indicator |
+| size            | Number            | 42          | The size(`px`) of default indicator |
+| maxHeight       | Number &#124; `none`    | 400         | Default maxHeight(`px`) of indicator container. Indicator will be placed in the center of that container. If you want to place indicator in the center of children, just set this attribute as `none`|

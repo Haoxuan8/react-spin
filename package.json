@@ -1,6 +1,6 @@
 {
   "name": "@haoxuan8/react-spin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "a simple and easy-use React loading/spinning component",
   "main": "index.js",
   "scripts": {

@@ -24,24 +24,42 @@ const HasChildren = props => {
   const {indicator} = props;
 
   const [s, setS] = useState(false);
-  const [h, setH] = useState(400);
   const [text, setText] = useState();
   const [size, setSize] = useState();
+  const [h, setH] = useState(600);
+  const [maxH, setMaxH] = useState(400);
 
   return (
     <div>
-      <Spin spinning={s} indicator={indicator} tip={text} size={size}>
+      <Spin spinning={s} indicator={indicator} tip={text} size={size} maxHeight={maxH}>
         <Content height={h} />
       </Spin>
       <button onClick={() => {setS(!s)}}>toggle</button>
-      <button onClick={() => {setH(h === 400 ? 800 : 400)}}>changeHeight</button>
       <div>
         <span>text</span>
         <input type="text" onChange={e => setText(e.target.value)} />
       </div>
       <div>
         <span>size</span>
-        <input type="number" onChange={e => setSize(e.target.value)} />
+        <input type="number" defaultValue={42} onChange={e => setSize(e.target.value)} />
+      </div>
+      <div>
+        <span>height</span>
+        <input defaultValue={600} type="number" onChange={e => setH(Number(e.target.value))} />
+      </div>
+      <div>
+        <span>maxHeight</span>
+        <input disabled={maxH === 'none'} type="number" defaultValue={400} onChange={e => setMaxH(Number(e.target.value))} />
+        <span style={{marginLeft: 12}}>
+          <span>set maxHeight as none</span>
+          <input type="checkbox" checked={maxH === 'none'} onChange={e => {
+            if (e.target.checked) {
+              setMaxH('none')
+            } else {
+              setMaxH(400)
+            }
+          }} />
+        </span>
       </div>
     </div>
   )
@@ -68,9 +86,6 @@ storiesOf('spin', module)
   ))
   .add('hasChildren', () => (
     <HasChildren />
-  ))
-  .add('changeIndicator', () => (
-    <HasChildren indicator={MyIcon} />
   ))
   .add('setDefaultIndicator', () => {
     return (

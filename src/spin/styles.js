@@ -16,7 +16,8 @@ export const SpinContainer = styled.div`
   z-index: 4;
   width: 100%;
   height: 100%;
-  max-height: 400px;
+
+  max-height: ${props => typeof props.maxHeight === 'number' ? `${props.maxHeight}px` : 'none'};
 
   &[data-spinning='delete'] {
     display: none;

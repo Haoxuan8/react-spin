@@ -37,6 +37,7 @@ const Spin = ({
   mainColor = $mainColor,
   fontColor = $fontColor,
   size = 42,
+  maxHeight = 400,
 }) => {
   const [_spinning, setSpinning] = useState();
   useEffect(() => {
@@ -48,10 +49,12 @@ const Spin = ({
     }
   }, [spinning])
 
+  const indicatorElm = <Indicator indicator={Spin.defaultIndicator ?? indicator} mainColor={mainColor} size={size} />
 
   const spinEl = (
     <SpinContainer
       data-spinning={_spinning}
+      maxHeight={maxHeight}
     >
       <SpinWrapper
         data-spinning={_spinning}
@@ -60,14 +63,14 @@ const Spin = ({
           if (e.animationName === 'spinning__close') setSpinning('delete')
         }}
       >
-        <Indicator indicator={Spin.defaultIndicator ?? indicator} mainColor={mainColor} size={size} />
+        {indicatorElm}
         {tip && <Text fontColor={fontColor}>{tip}</Text>}
       </SpinWrapper>
     </SpinContainer>
   )
 
   if (typeof children === 'undefined') {
-    return <Indicator />;
+    return indicatorElm
   } else {
     return (
       <Container
@@ -102,6 +105,7 @@ Spin.propTypes = {
   mainColor: PropTypes.string,
   fontColor: PropTypes.string,
   size: PropTypes.number, // icon px
+  maxHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.oneOf(['none'])]),
 }
 
 export default Spin
