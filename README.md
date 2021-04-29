@@ -1,8 +1,10 @@
 [![npm version](https://badge.fury.io/js/%40haoxuan8%2Freact-spin.svg)](https://www.npmjs.com/package/@haoxuan8/react-spin)
-
+[![npm dw](https://img.shields.io/npm/dw/@haoxuan8/react-spin)](https://www.npmjs.com/package/@haoxuan8/react-spin)
 # @haoxuan8/react-spin
 
 ![demo](https://cdn.jsdelivr.net/gh/Haoxuan8/react-spin/screenshots/demo.gif)
+
+[live demo](https://haoxuan8.github.io/react-spin/)
 
 ## Install
 
