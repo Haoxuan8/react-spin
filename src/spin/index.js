@@ -38,7 +38,7 @@ const Spin = ({
   fontColor = $fontColor,
   size = 42,
   maxHeight = 400,
-  classNames,
+  className,
   style,
 }) => {
   const [_spinning, setSpinning] = useState();
@@ -77,7 +77,7 @@ const Spin = ({
     return (
       <Container
         data-spinning={_spinning}
-        classNames={classNames ?? ""}
+        className={className ?? ""}
         style={{
           ...style,
         }}
@@ -112,7 +112,7 @@ Spin.propTypes = {
   fontColor: PropTypes.string,
   size: PropTypes.number, // icon px
   maxHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.oneOf(['none'])]),
-  classNames: PropTypes.string,
+  className: PropTypes.string,
   style: PropTypes.object,
 }
 
