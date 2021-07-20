@@ -70,6 +70,8 @@ export const Text = styled.div`
 
 export const ContentContainer = styled.div`
   transition: opacity .45s;
+  height: 100%;
+  width: 100%;
 
   &[data-spinning='true'] {
     opacity: ${props => props.opacity};
