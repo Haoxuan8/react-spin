@@ -38,6 +38,8 @@ const Spin = ({
   fontColor = $fontColor,
   size = 42,
   maxHeight = 400,
+  classNames,
+  style,
 }) => {
   const [_spinning, setSpinning] = useState();
   useEffect(() => {
@@ -75,6 +77,10 @@ const Spin = ({
     return (
       <Container
         data-spinning={_spinning}
+        classNames={classNames ?? ""}
+        style={{
+          ...style,
+        }}
       >
         {spinEl}
         <ContentContainer
@@ -106,6 +112,8 @@ Spin.propTypes = {
   fontColor: PropTypes.string,
   size: PropTypes.number, // icon px
   maxHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.oneOf(['none'])]),
+  classNames: PropTypes.string,
+  style: PropTypes.object,
 }
 
-export default Spin
+export default Spin;
